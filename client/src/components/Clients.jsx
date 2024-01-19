@@ -1,13 +1,11 @@
 import React from "react";
 import ClientRow from "./ClientRow";
 import { useQuery } from "@apollo/client";
-import Spinner from "./Spinner";
 import { GET_CLIENTS } from "../queries/ClientQueries.js";
 
 export default function Clients() {
   const { loading, error, data } = useQuery(GET_CLIENTS);
 
-  if (loading) return <Spinner />;
   if (error) return <p>Error...</p>;
   return (
     <>
