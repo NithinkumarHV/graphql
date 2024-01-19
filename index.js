@@ -15,6 +15,10 @@ connectDB();
 
 app.use(cors());
 
+app.get("/status", (req, res) => {
+  res.status(200).json("Server is up...");
+});
+
 app.use(
   "/graphql",
   graphqlHTTP({
