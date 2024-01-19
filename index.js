@@ -19,6 +19,8 @@ app.get("/status", (req, res) => {
   res.status(200).json("Server is up...");
 });
 
+console.log("Environment", process.env.NODE_ENV);
+
 app.use(
   "/graphql",
   graphqlHTTP({
